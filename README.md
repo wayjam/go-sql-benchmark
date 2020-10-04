@@ -5,10 +5,10 @@
 This benchmark will use Postgres as a test database and [pgx](https://github.com/jackc/pgx) as the driver.
 
 -	database/sql
--	sqlx
--	pgx
--	gorm
--	squirrel
+-	[sqlx](https://github.com/jmoiron/sqlx)
+-	[pgx](https://github.com/jackc/pgx)
+-	[gorm](https://github.com/go-gorm/gorm)
+-	[squirrel](https://github.com/Masterminds/squirrel)
 
 ## Run
 
@@ -45,7 +45,7 @@ go test  -v ./... -bench=. -benchmem
 
 Feel free to contribute to this project.
 
-[ ] CI and auto-genereated report
-[ ] prepare statement benchmark
-[ ] [ent](https://github.com/facebook/ent) benchmark
-[ ] code comments
+- [ ] CI and auto-genereated report
+- [ ] prepare statement benchmark
+- [ ] [ent](https://github.com/facebook/ent) benchmark
+- [ ] add more code comments
