@@ -39,6 +39,6 @@ jobs:
         run: go mod download && go vet ./...
 
       - name: Run Benchmark
-        run: cob -bench-args "test -bench . -benchmem ./..."
+        run: cob -bench-args "test -bench . -benchmem ./..." -compare B/op
         env:
           BENCHMARK_SQL_DSN: "host=localhost user=postgres password=postgres dbname=test sslmode=disable"

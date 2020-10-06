@@ -34,7 +34,9 @@ go test  -v ./... -bench=. -benchmem
 
 ## Report
 
-Find the reference report at: <https://github.com/wayjam/go-sql-benchmark/actions?query=workflow%3A%22Go+SQL-libs+Benchmark%22>
+Using [cob](https://github.com/knqyf263/cob) to run benchmark on Github Actions.
+
+Find the reference report at: <https://github.com/wayjam/go-sql-benchmark/actions?query=branch%3Amaster+is%3Asuccess>
 
 ## TODO
 
@@ -42,7 +44,12 @@ Find the reference report at: <https://github.com/wayjam/go-sql-benchmark/action
 - [ ] prepare statement benchmark
 - [ ] [ent](https://github.com/facebook/ent) benchmark
 - [ ] add more code comments
+- [ ] comparison between libs.
 
 ## Contribute
 
-Feel free to contribute to this project.
+Feel free to make contributiton to this project.
+
+### Donate
+
+<a href="https://www.buymeacoffee.com/wayjam" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Cola" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
