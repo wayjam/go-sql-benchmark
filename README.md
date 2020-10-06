@@ -18,10 +18,10 @@ This benchmark will use Postgres as a test database and [pgx](https://github.com
 docker run -d \
 --name go-sql-benchmark-pg \
 -p 5432:5432 \
--e POSTGRESQL_PASSWORD=postgres \
--e POSTGRESQL_DATABASE=test 
--e POSTGRESQL_USERNAME=postgres \
-bitnami/postgresql:latest
+-e POSTGRES_PASSWORD=postgres \
+-e POSTGRES_DB=test \
+-e POSTGRES_USERNAME=postgres \
+postgres:12
 ```
 
 **Start the test**

@@ -1,0 +1,44 @@
+name: Go SQL-libs Benchmark
+on: push
+
+jobs:
+  # Label of the container job
+  container-job:
+    # Containers must run in Linux based operating systems
+    runs-on: ubuntu-latest
+
+    # Service containers to run with `container-job`
+    services:
+      postgres:
+        image: postgres:12
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: test
+        ports:
+        - 5432:5432
+        # needed because the postgres container does not provide a healthcheck
+        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.14
+
+      # Downloads a copy of the code in your repository before running CI tests
+      - name: Check out repository code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 3
+
+      - name: Install Cob
+        run: curl -sfL https://raw.githubusercontent.com/knqyf263/cob/master/install.sh | sudo sh -s -- -b /usr/local/bin
+
+      - name: Install Go requirements
+        run: go mod download && go vet ./...
+
+      - name: Run Benchmark
+        run: cob -bench-args "test -bench . -benchmem ./..."
+        env:
+          BENCHMARK_SQL_DSN: "host=localhost user=postgres password=postgres dbname=test sslmode=disable"
