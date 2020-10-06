@@ -1,5 +1,5 @@
 name: Go SQL-libs Benchmark
-on: push
+on: [push, pull_request]
 
 jobs:
   # Label of the container job

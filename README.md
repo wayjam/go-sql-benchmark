@@ -34,18 +34,15 @@ go test  -v ./... -bench=. -benchmem
 
 ## Report
 
-### Reference report
-
-**Environment**
-
-- MacBook Pro (15-inch, 2019) with 2.6 GHz 6-Core Intel Core i7 & 16GB RAM.
-- PostgreSQL 9.6 in docker(darwin)
+Find the reference report at: <https://github.com/wayjam/go-sql-benchmark/actions?query=workflow%3A%22Go+SQL-libs+Benchmark%22>
 
 ## TODO
 
-Feel free to contribute to this project.
-
-- [ ] CI and auto-genereated report
+- [x] CI and auto-genereated report
 - [ ] prepare statement benchmark
 - [ ] [ent](https://github.com/facebook/ent) benchmark
 - [ ] add more code comments
+
+## Contribute
+
+Feel free to contribute to this project.
